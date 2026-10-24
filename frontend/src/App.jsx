@@ -1,122 +1,100 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Navigate, Route, Routes } from "react-router-dom";
 
+import Login from "./pages/common/Login.jsx";
+import StudentDashboard from "./pages/student/StudentDashboard.jsx";
+import MockTests from "./pages/student/MockTests.jsx";
+import StudentLayout from "./layouts/StudentLayout.jsx";
+
+function SimplePage({ title, description }) {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <main className="placeholder-page">
+      <div className="placeholder-card">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <a className="text-link" href="/student/dashboard">
+          Return to dashboard
+        </a>
+      </div>
+    </main>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<Login />} />
+
+      <Route
+        path="/forgot-password"
+        element={
+          <SimplePage
+            title="Forgot password?"
+            description="Password reset will be connected to your backend."
+          />
+        }
+      />
+
+      <Route path="/student" element={<StudentLayout />}>
+        <Route path="dashboard" element={<StudentDashboard />} />
+        <Route path="mock-tests" element={<MockTests />} />
+
+        <Route
+          path="results"
+          element={
+            <SimplePage
+              title="My Results"
+              description="Your completed mock test results will appear here."
+            />
+          }
+        />
+
+        <Route
+          path="profile"
+          element={
+            <SimplePage
+              title="My Profile"
+              description="Your profile information will appear here."
+            />
+          }
+        />
+
+        <Route
+          path="tests/:id/instructions"
+          element={
+            <SimplePage
+              title="Test Instructions"
+              description="Instructions for your selected speaking test will appear here."
+            />
+          }
+        />
+
+        <Route
+          path="tests/:id/speaking"
+          element={
+            <SimplePage
+              title="Speaking Test"
+              description="Your speaking test interface will appear here."
+            />
+          }
+        />
+      </Route>
+
+      <Route
+        path="/admin/dashboard"
+        element={
+          <SimplePage
+            title="Admin Dashboard"
+            description="The admin dashboard is under development."
+          />
+        }
+      />
+
+      <Route
+        path="*"
+        element={<Navigate to="/student/dashboard" replace />}
+      />
+    </Routes>
+  );
+}
