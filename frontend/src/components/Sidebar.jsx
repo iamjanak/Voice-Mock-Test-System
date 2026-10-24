@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { NavLink, useNavigate } from "react-router-dom";
 import {
@@ -85,4 +86,8 @@ export default function Sidebar() {
       </div>
     </aside>
   );
+=======
+export default function Sidebar() {
+  return null
+>>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
 }

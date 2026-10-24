@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -402,4 +403,8 @@ export default function StudentDashboard() {
       </main>
     </div>
   );
+=======
+export default function StudentDashboard() {
+  return <main><h1>Student dashboard</h1></main>
+>>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
 }

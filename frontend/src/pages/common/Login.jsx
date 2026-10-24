@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -253,4 +254,8 @@ export default function Login() {
       </section>
     </main>
   );
+=======
+export default function Login() {
+  return <main><h1>Login</h1></main>
+>>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
 }

@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'apps.accounts.apps.AccountsConfig',
+    'apps.tests_manager.apps.TestsManagerConfig',
+    'apps.attempts.apps.AttemptsConfig',
+    'apps.evaluation.apps.EvaluationConfig',
+    'apps.notifications.apps.NotificationsConfig',
 ]
 
 MIDDLEWARE = [

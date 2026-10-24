@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { Navigate, Route, Routes } from "react-router-dom";
 
@@ -98,3 +99,11 @@ export default function App() {
     </Routes>
   );
 }
+=======
+import Home from './pages/common/Home.jsx'
+import './styles/global.css'
+
+export default function App() {
+  return <Home />
+}
+>>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
