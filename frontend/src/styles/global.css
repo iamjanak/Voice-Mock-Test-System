@@ -1,20 +1,13 @@
-<<<<<<< HEAD
-
 /* =====================================================
    Voice Mock Test System — Global Styles
    Responsive login, student and admin pages
    ===================================================== */
 
 /* 1. Global reset */
-=======
-@import './variables.css';
->>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
-
 * {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 html,
 body,
 #root {
@@ -981,10 +974,4 @@ input:focus-visible {
     width: 76px;
     min-width: 76px;
   }
-=======
-body {
-  margin: 0;
-  color: var(--color-text);
-  font-family: system-ui, sans-serif;
->>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
 }

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar.jsx";
 
@@ -13,8 +11,4 @@ export default function StudentLayout() {
       </div>
     </div>
   );
-=======
-export default function StudentLayout({ children }) {
-  return <>{children}</>
->>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
 }

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -54,7 +52,7 @@ export default function Sidebar() {
       </div>
 
       <nav className="sidebar-nav" aria-label="Student navigation">
-        <p className="sidebar-section-title">MENU</p>
+        {/* <p className="sidebar-section-title">MENU</p> */}
 
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
@@ -86,8 +84,4 @@ export default function Sidebar() {
       </div>
     </aside>
   );
-=======
-export default function Sidebar() {
-  return null
->>>>>>> 4e3956b564cfbe5c5f465f97057ee96081f8f6a2
 }

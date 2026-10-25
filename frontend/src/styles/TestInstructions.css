@@ -1,0 +1,874 @@
+
+.instructions-page {
+  --instruction-navy: #172b4d;
+  --instruction-blue: #365fce;
+  --instruction-muted: #77849a;
+  --instruction-border: #e7ebf2;
+
+  --instruction-background: #f6f8fc;
+  --instruction-light-blue: #f0f4ff;
+  --instruction-soft-blue: #e8efff;
+  --instruction-hover-blue: #2d51b8;
+  --instruction-white: #ffffff;
+
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 30px 34px 24px;
+  box-sizing: border-box;
+  color: var(--instruction-navy);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: var(--instruction-background);
+}
+
+.instructions-page *,
+.instructions-page *::before,
+.instructions-page *::after {
+  box-sizing: border-box;
+}
+
+.back-to-tests {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding: 9px 13px;
+  border: 1px solid var(--instruction-border);
+  border-radius: 9px;
+  background: var(--instruction-white);
+  color: #445571;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.back-to-tests:hover {
+  color: var(--instruction-blue);
+  border-color: #b9cafa;
+  background: var(--instruction-light-blue);
+}
+
+.back-arrow {
+  font-size: 19px;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.back-to-tests:hover .back-arrow {
+  transform: translateX(-3px);
+}
+
+.back-to-tests:focus-visible,
+.instructions-page button:focus-visible {
+  outline: 3px solid #b8ccff;
+  outline-offset: 3px;
+}
+
+/* Hero banner */
+
+.instructions-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 245px;
+  padding: 34px 42px;
+  overflow: hidden;
+  border: 1px solid #dfe7fb;
+  border-radius: 18px;
+  background: linear-gradient(
+    112deg,
+    #ffffff 0%,
+    #f3f6ff 62%,
+    #e8efff 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 610px;
+}
+
+.hero-eyebrow,
+.section-eyebrow,
+.microphone-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--instruction-blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.hero-eyebrow-dot,
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--instruction-blue);
+}
+
+.hero-content h1 {
+  margin: 15px 0 10px;
+  color: var(--instruction-navy);
+  font-size: clamp(29px, 3vw, 39px);
+  font-weight: 760;
+  line-height: 1.17;
+  letter-spacing: -1.3px;
+}
+
+.hero-description {
+  max-width: 510px;
+  margin: 0;
+  color: #687894;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.test-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.test-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid #e2e8f5;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #465875;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.meta-icon {
+  color: var(--instruction-blue);
+  font-size: 15px;
+}
+
+/* Hero microphone illustration */
+
+.hero-illustration {
+  position: relative;
+  display: flex;
+  flex: 0 0 215px;
+  align-items: center;
+  justify-content: center;
+  width: 215px;
+  height: 185px;
+  margin-right: 15px;
+}
+
+.hero-circle {
+  position: absolute;
+  border: 1px solid rgba(54, 95, 206, 0.17);
+  border-radius: 50%;
+}
+
+.hero-circle-one {
+  width: 175px;
+  height: 175px;
+}
+
+.hero-circle-two {
+  width: 132px;
+  height: 132px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-mic {
+  z-index: 1;
+  display: grid;
+  width: 91px;
+  height: 91px;
+  place-items: center;
+  border: 1px solid #d9e3ff;
+  border-radius: 25px;
+  background: var(--instruction-white);
+  color: var(--instruction-blue);
+  box-shadow: 0 14px 35px rgba(47, 77, 154, 0.13);
+  transform: rotate(-5deg);
+}
+
+.hero-mic svg {
+  width: 49px;
+  height: 49px;
+}
+
+.hero-spark {
+  position: absolute;
+  color: #7a95e8;
+}
+
+.hero-spark-one {
+  top: 23px;
+  right: 30px;
+  font-size: 25px;
+}
+
+.hero-spark-two {
+  bottom: 22px;
+  left: 20px;
+  font-size: 30px;
+}
+
+.hero-floating-note {
+  position: absolute;
+  right: -4px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 10px 13px;
+  border: 1px solid #e2e8f5;
+  border-radius: 9px;
+  background: var(--instruction-white);
+  color: #53688e;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(35, 58, 104, 0.08);
+}
+
+/* Section heading */
+
+.instructions-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 34px 0 19px;
+}
+
+.section-eyebrow {
+  color: #8290a6;
+  font-size: 10px;
+}
+
+.instructions-section-heading h2 {
+  margin: 8px 0 6px;
+  color: var(--instruction-navy);
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.55px;
+}
+
+.instructions-section-heading p {
+  margin: 0;
+  color: #7a879b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.instructions-count {
+  padding: 8px 10px;
+  border: 1px solid #e4e9f1;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #7a879b;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+
+/* Main two-column layout */
+
+.instructions-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.instructions-card,
+.microphone-card {
+  min-width: 0;
+  border: 1px solid var(--instruction-border);
+  border-radius: 15px;
+  background: var(--instruction-white);
+  box-shadow: 0 5px 20px rgba(26, 43, 77, 0.035);
+}
+
+/* Instructions card */
+
+.instructions-card {
+  padding: 25px 25px 22px;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.card-heading-icon {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--instruction-light-blue);
+  color: var(--instruction-blue);
+  font-size: 20px;
+}
+
+.card-heading h3,
+.microphone-card h3 {
+  margin: 0;
+  color: #223553;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.card-heading p {
+  margin: 5px 0 0;
+  color: #8490a2;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.guidelines-list {
+  padding-top: 7px;
+}
+
+.guideline-item {
+  display: grid;
+  grid-template-columns: 31px 39px minmax(0, 1fr);
+  align-items: start;
+  gap: 13px;
+  padding: 19px 0;
+  border-bottom: 1px solid #eff2f6;
+}
+
+.guideline-item:last-child {
+  border-bottom: none;
+}
+
+.guideline-number {
+  padding-top: 10px;
+  color: #9ba6b8;
+  font-size: 11px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.guideline-icon {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 1px solid #e7ecfb;
+  border-radius: 11px;
+  background: #f4f6ff;
+  color: var(--instruction-blue);
+  font-size: 19px;
+}
+
+.guideline-content h4 {
+  margin: 1px 0 6px;
+  color: #2a3c59;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.guideline-content p {
+  margin: 0;
+  color: #78869a;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Quiet-place reminder */
+
+.quiet-reminder {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 15px;
+  border: 1px solid #dfe7fb;
+  border-radius: 11px;
+  background: #f4f7ff;
+}
+
+.quiet-reminder-icon {
+  display: grid;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e4ebff;
+  color: var(--instruction-blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.quiet-reminder strong {
+  color: var(--instruction-navy);
+  font-size: 12px;
+}
+
+.quiet-reminder p {
+  margin: 5px 0 0;
+  color: #687894;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Microphone setup panel */
+
+.microphone-card {
+  padding: 23px;
+}
+
+.microphone-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.microphone-label {
+  color: #8491a7;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.microphone-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 9px;
+  border: 1px solid #e8ebf1;
+  border-radius: 20px;
+  background: #f8f9fb;
+  color: #7d899b;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.microphone-status .status-dot {
+  width: 6px;
+  height: 6px;
+  background: #a0a9b8;
+}
+
+.microphone-status.status-ready {
+  border-color: #d3defb;
+  background: #f0f4ff;
+  color: var(--instruction-blue);
+}
+
+.microphone-status.status-ready .status-dot {
+  background: var(--instruction-blue);
+}
+
+.microphone-visual {
+  display: grid;
+  width: 104px;
+  height: 104px;
+  place-items: center;
+  margin: 24px auto 20px;
+  border: 1px solid #e6ebfb;
+  border-radius: 50%;
+  background: #f5f7ff;
+}
+
+.microphone-visual-ring {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  border: 1px solid #dce5ff;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--instruction-blue);
+  transition: background 0.2s, color 0.2s;
+}
+
+.microphone-visual-ring svg {
+  width: 39px;
+  height: 39px;
+}
+
+.microphone-visual.visual-ready .microphone-visual-ring {
+  border-color: #d3defb;
+  background: #e8efff;
+  color: var(--instruction-blue);
+}
+
+.microphone-card > h3 {
+  text-align: center;
+  font-size: 17px;
+}
+
+.microphone-description {
+  margin: 10px auto 0;
+  color: #7b879b;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Audio wave */
+
+.audio-wave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 45px;
+  margin: 15px 0 19px;
+}
+
+.audio-wave span {
+  display: block;
+  width: 4px;
+  height: var(--bar-height, 16px);
+  max-height: 34px;
+  border-radius: 5px;
+  background: #cbd5f3;
+  transition: background 0.2s;
+}
+
+.audio-wave.wave-ready span {
+  background: #819be7;
+}
+
+/* Buttons */
+
+.microphone-button,
+.begin-test-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 45px;
+  padding: 12px 15px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+.microphone-button {
+  border: 1px solid #dce5fb;
+  background: #f2f5ff;
+  color: #3558b4;
+}
+
+.microphone-button:hover:not(:disabled) {
+  border-color: #b9cafa;
+  background: #e8eeff;
+}
+
+.microphone-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.button-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #c6d4fb;
+  border-top-color: var(--instruction-blue);
+  border-radius: 50%;
+  animation: microphone-spin 0.7s linear infinite;
+}
+
+@keyframes microphone-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Microphone feedback */
+
+.microphone-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 11px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.microphone-error {
+  border: 1px solid #e7cfd3;
+  background: #faf4f6;
+  color: #8b4655;
+}
+
+.microphone-success {
+  border: 1px solid #d3defb;
+  background: #f0f4ff;
+  color: #3558b4;
+}
+
+.microphone-divider {
+  height: 1px;
+  margin: 22px 0 17px;
+  background: #edf0f5;
+}
+
+.ready-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+
+.ready-summary-icon {
+  display: grid;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 7px;
+  background: #f0f3fa;
+  color: #72819b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ready-summary p {
+  margin: 1px 0 0;
+  color: #718097;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Primary begin-test button */
+
+.begin-test-button {
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 13px 16px;
+  border: 1px solid var(--instruction-blue);
+  background: var(--instruction-blue);
+  color: #ffffff;
+  box-shadow: 0 5px 12px rgba(54, 95, 206, 0.15);
+}
+
+.begin-test-button > span {
+  font-size: 19px;
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+
+.begin-test-button:hover:not(:disabled) {
+  border-color: #2849a9;
+  background: var(--instruction-hover-blue);
+  box-shadow: 0 7px 16px rgba(54, 95, 206, 0.22);
+}
+
+.begin-test-button:hover:not(:disabled) > span {
+  transform: translateX(3px);
+}
+
+.begin-test-button:disabled {
+  border-color: #dce2ee;
+  background: #e9edf5;
+  color: #98a3b6;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.microphone-hint {
+  margin: 12px 0 0;
+  color: #9aa4b5;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Footer */
+
+.instructions-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  padding: 18px 0 4px;
+  border-top: 1px solid #e5eaf2;
+  color: #8995a8;
+  font-size: 11px;
+}
+
+.footer-separator {
+  color: #c1c9d5;
+}
+
+/* Responsive layout */
+
+@media (min-width: 1500px) {
+  .instructions-page {
+    padding-right: 42px;
+    padding-left: 42px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .instructions-page {
+    padding: 25px 22px;
+  }
+
+  .instructions-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(270px, 0.85fr);
+    gap: 16px;
+  }
+
+  .instructions-card,
+  .microphone-card {
+    padding: 19px;
+  }
+
+  .hero-illustration {
+    flex-basis: 165px;
+    width: 165px;
+    margin-right: 0;
+  }
+
+  .hero-circle-one {
+    width: 145px;
+    height: 145px;
+  }
+}
+
+@media (max-width: 760px) {
+  .instructions-page {
+    padding: 20px 15px;
+  }
+
+  .instructions-hero {
+    min-height: 0;
+    padding: 28px 23px;
+  }
+
+  .hero-illustration {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .test-meta {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .test-meta > span {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+
+  .instructions-section-heading {
+    align-items: flex-start;
+    margin-top: 28px;
+  }
+
+  .instructions-count {
+    display: none;
+  }
+
+  .instructions-section-heading h2 {
+    font-size: 21px;
+  }
+
+  .instructions-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .instructions-card,
+  .microphone-card {
+    padding: 20px;
+  }
+
+  .microphone-card {
+    max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .instructions-page {
+    padding-right: 11px;
+    padding-left: 11px;
+  }
+
+  .instructions-hero {
+    padding: 23px 17px;
+    border-radius: 13px;
+  }
+
+  .hero-content h1 {
+    font-size: 27px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .test-meta > span {
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .instructions-card,
+  .microphone-card {
+    padding: 16px;
+  }
+
+  .guideline-item {
+    grid-template-columns: 24px 34px minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .guideline-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .guideline-content p {
+    font-size: 11px;
+  }
+
+  .instructions-footer {
+    gap: 7px;
+    line-height: 1.7;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .instructions-page *,
+  .instructions-page *::before,
+  .instructions-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
